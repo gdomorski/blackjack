@@ -7,24 +7,13 @@ class window.Hand extends Backbone.Collection
     @add(@deck.pop())
     @last()
     @busted()
-      #if @scores()[1] > @scores()[0] && @scores()[1] <= 21
-      # @set 'scores', [@scores()[1], @scores()[1]]
-        #@scores = [@scores()[1], @scores()[1]]
-
 
   stand: =>
     if @isDealer
       @models[0].flip()
       while @scores()[0] < 17
         @hit()
-
-    console.log(@)
-    # if @scores()[1] > @scores()[0] && @scores()[1] <= 21
-    #   @set 'scores', [@scores()[1], @scores()[1]]
-      # @scores = [@scores()[1], @scores()[1]]
-
     @trigger('endGame')
-
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
