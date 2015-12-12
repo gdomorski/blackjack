@@ -10,7 +10,7 @@ class window.AppView extends Backbone.View
     'click .stand-button': -> @model.get('playerHand').stand()
 
   initialize: ->
-    @model.get('playerHand').on('bust', @busted)
+    # @model.get('playerHand').on('bust', @busted)
     @render() 
 
   render: ->
@@ -19,5 +19,5 @@ class window.AppView extends Backbone.View
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el
     @$('.dealer-hand-container').html new HandView(collection: @model.get 'dealerHand').el
 
-  busted: -> 
-    alert 'Game Over'
+  # busted: -> 
+  #   alert 'Game Over'

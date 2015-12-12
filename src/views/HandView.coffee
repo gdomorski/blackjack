@@ -5,8 +5,10 @@ class window.HandView extends Backbone.View
 
   initialize: ->
     @collection.on 'add remove change', => @render()
-    # @collection.on 'bust', => #@busted
+    console.log @collection
     @render()
+    # @collection.on 'change', => @checkScore
+    @collection.on 'bust', => @busted(-> alert('Hey'))
 
   render: ->
     @$el.children().detach()
@@ -15,3 +17,9 @@ class window.HandView extends Backbone.View
       new CardView(model: card).$el
     @$('.score').text @collection.scores()[0]
 
+  # busted: (f) -> 
+  #   ->
+  #     f?.apply this, arguments
+  #     f = null
+  checkScore: ->
+    if @collection.minScore > 21 then console.log 'BUST'
