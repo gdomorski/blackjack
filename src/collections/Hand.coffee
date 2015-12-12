@@ -7,26 +7,23 @@ class window.Hand extends Backbone.Collection
     @add(@deck.pop())
     @last()
     @busted()
+      #if @scores()[1] > @scores()[0] && @scores()[1] <= 21
+      # @set 'scores', [@scores()[1], @scores()[1]]
+        #@scores = [@scores()[1], @scores()[1]]
 
 
   stand: =>
-    playerScore = @scores()[0]
-
-    console.log(@isDealer)
     if @isDealer
-      console.log(@)
       @models[0].flip()
       while @scores()[0] < 17
         @hit()
 
-    @trigger('endGame')
+    console.log(@)
+    # if @scores()[1] > @scores()[0] && @scores()[1] <= 21
+    #   @set 'scores', [@scores()[1], @scores()[1]]
+      # @scores = [@scores()[1], @scores()[1]]
 
-    #check the deals score
-    #while he is under 17
-    # hit the dealer
-    
-    #compare the scores
-    #return the winner
+    @trigger('endGame')
 
 
   hasAce: -> @reduce (memo, card) ->
@@ -41,8 +38,12 @@ class window.Hand extends Backbone.Collection
     # The scores are an array of potential scores.
     # Usually, that array contains one element. That is the only score.
     # when there is an ace, it offers you two scores - the original score, and score + 10.
-    [@minScore(), @minScore() + 10 * @hasAce()]
+    if (@minScore() > (@minScore() + 10 * @hasAce()))
+      [@minScore(), @minScore() + 10 * @hasAce()]
+    else
+      [@minScore() + 10 * @hasAce(), @minScore()]
 
   busted: -> 
-    totalScores = @scores()[0]
-    if totalScores > 21 then alert 'You Suck'
+    totalScore1 = @scores()[0]
+    totalScore2 = @scores()[1]
+    if (totalScore1 > 21 && totalScore2 > 21) then alert 'The score is over 21! Bust!'
