@@ -8,6 +8,10 @@ class window.Hand extends Backbone.Collection
     @last()
     @busted()
 
+  doubleDown: ->
+    @hit()
+    @hit()
+
   stand: =>
     if @isDealer
       @models[0].flip()
@@ -36,3 +40,4 @@ class window.Hand extends Backbone.Collection
     totalScore1 = @scores()[0]
     totalScore2 = @scores()[1]
     if (totalScore1 > 21 && totalScore2 > 21) then alert 'The score is over 21! Bust!'
+    @trigger('bust')

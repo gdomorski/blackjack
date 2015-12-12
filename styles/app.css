@@ -23,3 +23,11 @@ body {
 h2 {
   color: white;
 }
+
+.moveRight {
+  float: right;
+}
+
+.gameView {
+  float: left;
+}
