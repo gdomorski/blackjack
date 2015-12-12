@@ -1,9 +1,10 @@
 .card {
   float: left;
   border: solid 1px black;
-  width: 100px;
+/*  width: 100px;*/
+
   border-radius: 5px;
-  height: 140px;
+  /*height: 140px;*/
   margin-right: 20px;
 }
 
@@ -13,4 +14,12 @@
 
 .hand {
   overflow: auto;
+}
+
+body {
+ background-image: url("../img/blackjackbg.jpg");
+}
+
+h2 {
+  color: white;
 }
