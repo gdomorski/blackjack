@@ -8,11 +8,19 @@ class window.Hand extends Backbone.Collection
     @last()
     @busted()
 
-    #if it goes over 21, dealer wins
 
+  stand: =>
+    playerScore = @scores()[0]
 
-  stand: ->
-    #get the current score
+    console.log(@isDealer)
+    if @isDealer
+      console.log(@)
+      @models[0].flip()
+      while @scores()[0] < 17
+        @hit()
+
+    @trigger('endGame')
+
     #check the deals score
     #while he is under 17
     # hit the dealer
