@@ -2,6 +2,9 @@ assert = chai.assert
 
 describe "deck constructor", ->
 
-  it "should create a card collection", ->
+  beforeEach ->
     collection = new Deck()
+
+
+  it "should create a card collection", ->
     assert.strictEqual collection.length, 52

@@ -3,14 +3,26 @@ class window.Hand extends Backbone.Collection
 
   initialize: (array, @deck, @isDealer) ->
 
+
+  #currentCount: 0
+
   hit: ->
     @add(@deck.pop())
     @last()
     @busted()
+  # @count()
+
 
   doubleDown: ->
     @hit()
     @hit()
+
+  # count: ->  
+  #   for model in @models
+  #     if model.attributes.value <= 6
+  #       @currentCount++
+  #     else if model.attributes.value >= 9
+  #       @currentCount--
 
   stand: =>
     if @isDealer

@@ -34,6 +34,7 @@ describe 'deck', ->
 
 
   describe 'bust', ->
+    it 'should make the the dealer or player bust if he goes over 21'
     hand.busted().trigger('bust')
 
 

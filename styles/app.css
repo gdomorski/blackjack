@@ -31,3 +31,9 @@ h2 {
 .gameView {
   float: left;
 }
+
+.cardCount {
+  color: red;
+  font-size: 1.5em;
+  margin-top: 25px;
+}
