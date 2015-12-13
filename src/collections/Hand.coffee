@@ -3,26 +3,15 @@ class window.Hand extends Backbone.Collection
 
   initialize: (array, @deck, @isDealer) ->
 
-
-  #currentCount: 0
-
   hit: ->
     @add(@deck.pop())
     @last()
     @busted()
-  # @count()
-
 
   doubleDown: ->
     @hit()
     @hit()
 
-  # count: ->  
-  #   for model in @models
-  #     if model.attributes.value <= 6
-  #       @currentCount++
-  #     else if model.attributes.value >= 9
-  #       @currentCount--
 
   stand: =>
     if @isDealer
@@ -40,9 +29,6 @@ class window.Hand extends Backbone.Collection
   , 0
 
   scores: ->
-    # The scores are an array of potential scores.
-    # Usually, that array contains one element. That is the only score.
-    # when there is an ace, it offers you two scores - the original score, and score + 10.
     if ((@minScore() + 10 * @hasAce()) > @minScore() && (@minScore() + 10 * @hasAce()) <= 21)
       [@minScore() + 10 * @hasAce(), @minScore()]
     else

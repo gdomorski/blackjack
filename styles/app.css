@@ -1,10 +1,7 @@
 .card {
   float: left;
   border: solid 1px black;
-/*  width: 100px;*/
-
   border-radius: 5px;
-  /*height: 140px;*/
   margin-right: 20px;
 }
 
@@ -36,4 +33,67 @@ h2 {
   color: red;
   font-size: 1.5em;
   margin-top: 25px;
+}
+
+.hit-button{
+    position: relative;
+    padding: 5px 30px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+}
+
+.dd-button{
+    position: relative;
+    padding: 5px 30px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #990d00;
+    border-bottom: 5px solid #990000;
+    text-shadow: 0px -2px #990000;
+}
+
+
+.stand-button{
+    position: relative;
+    padding: 5px 30px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #551a8b;
+    border-bottom: 5px solid #44146f;
+    text-shadow: 0px -2px #44146f;
+}
+
+.reset-button{
+    position: relative;
+    padding: 5px 30px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #007300;
+    border-bottom: 5px solid #004c00;
+    text-shadow: 0px -2px #004c00;
+}
+
+.smallText {
+  font-size: .8em;
+  font-family: 'Arial', cursive;
+  color: white;
 }

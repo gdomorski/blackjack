@@ -33,7 +33,7 @@ class window.AppView extends Backbone.View
     # @$el.append @template2()
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el
     @$('.dealer-hand-container').html new HandView(collection: @model.get 'dealerHand').el
-    @$('.cardCount').html('The current count is ' + @currentCount)
+    @$('.cardCount').html('The count is ' + @currentCount + '<p class="smallText"> The higher the count the more you should bet. Look <br>at the strategy card to the right for your best option.</p>')
 
   cardCount: =>
     @currentCount = 0;
